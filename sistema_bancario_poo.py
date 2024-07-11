@@ -148,7 +148,7 @@ class Deposito(Transacao):
         return self._valor
     
     def registrar(self, conta):
-        sucesso_transacao = conta.sacar(self.valor) # xxxxxxxxxxxxxxxxxxxxxxx12:20xxxxxxxxxxxxxxxxxxxxxxxxxxx
+        sucesso_transacao = conta.sacar(self.valor) # xxxxxxxxxxxxxxxxxxxxxxx 12:20 xxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 class Saque(Transacao):
     def __init__(self, valor):
