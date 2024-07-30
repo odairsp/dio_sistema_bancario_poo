@@ -2,33 +2,39 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 import textwrap
 
+
 class Cliente:
     def __init__(self, endereco):
-        
+
         self.endereco = endereco
         self.contas = []
-   
+
     def realizar_transacao(self, conta, transacao):
         transacao.registrar(conta)
-    
-    def adicionar_conta(self,conta):
+
+    def adicionar_conta(self, conta):
         self.contas.append(conta)
-    
+
+
 class PessoaFisica(Cliente):
     def __init__(self, nome, data_nascimento, cpf, endereco):
         super().__init__(endereco)
         self._nome = nome
         self._data_nascimento = data_nascimento
         self._cpf = cpf
+
     @property
     def cpf(self):
         return self._cpf
+
     @property
     def nome(self):
         return self._nome
+
     @property
     def data_nascimento(self):
         return self._data_nascimento
+
 
 class Conta:
     
